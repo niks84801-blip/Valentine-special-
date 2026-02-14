@@ -16,67 +16,58 @@ text-align:center;
 overflow-x:hidden;
 }
 
-/* floating animation */
-@keyframes float{
-0%{transform:translateY(0px);}
-50%{transform:translateY(-15px);}
-100%{transform:translateY(0px);}
-}
-
-/* glow animation */
+/* title glow */
 @keyframes glow{
-0%{box-shadow:0 0 10px rgba(255,255,255,0.3);}
-50%{box-shadow:0 0 30px rgba(255,255,255,0.8);}
-100%{box-shadow:0 0 10px rgba(255,255,255,0.3);}
+0%{text-shadow:0 0 10px white;}
+50%{text-shadow:0 0 25px white;}
+100%{text-shadow:0 0 10px white;}
 }
 
-/* heart falling */
-@keyframes fall{
-0%{
-transform:translateY(-100px);
-opacity:1;
-}
-100%{
-transform:translateY(100vh);
-opacity:0;
-}
-}
-
-.container{
-padding:20px;
-}
-
-/* title */
 .title{
 font-size:26px;
-font-weight:bold;
-margin-top:10px;
+margin-top:20px;
 animation: glow 2s infinite;
 }
 
-/* photo style */
-.photo-box{
-margin-top:20px;
-animation: float 4s ease-in-out infinite;
-}
-
-.photo-box img{
-width:250px;
-max-width:90%;
-height:auto;
+/* slideshow */
+.slideshow{
+width:260px;
+height:340px;
+margin:20px auto;
+position:relative;
 border-radius:20px;
-animation: glow 3s infinite;
+overflow:hidden;
+box-shadow:0 0 20px rgba(255,255,255,0.6);
 }
 
-/* message box (Arial font same as before) */
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+opacity:0;
+transition:1s;
+}
+
+.slide img{
+width:100%;
+height:100%;
+object-fit:cover;
+border-radius:20px;
+}
+
+.active{
+opacity:1;
+}
+
+/* message */
 .message{
 font-family: Arial, sans-serif;
 font-size:16px;
 line-height:1.6;
 background: rgba(255,255,255,0.2);
 padding:15px;
-border-radius:15px;
 margin:20px;
+border-radius:15px;
 }
 
 /* button */
@@ -88,20 +79,14 @@ border:none;
 border-radius:25px;
 font-size:16px;
 margin-top:15px;
-cursor:pointer;
-animation: glow 2s infinite;
 }
 
-.btn:hover{
-background:darkred;
+/* heart animation */
+@keyframes fall{
+0%{transform:translateY(-100px);}
+100%{transform:translateY(100vh);}
 }
 
-/* song section */
-.song{
-margin-top:20px;
-}
-
-/* hearts */
 .heart{
 position:fixed;
 top:-10px;
@@ -114,56 +99,77 @@ animation: fall linear infinite;
 
 <body>
 
-<div class="container">
-
 <div class="title">
 Happy Valentine's Day My Love ❤️
 </div>
 
-<div class="photo-box">
+<!-- slideshow -->
+<div class="slideshow">
+
+<div class="slide active">
 <img src="photo1.jpg">
 </div>
 
+<div class="slide">
+<img src="photo2.jpg">
+</div>
+
+<div class="slide">
+<img src="photo3.jpg">
+</div>
+
+<div class="slide">
+<img src="photo4.jpg">
+</div>
+
+<div class="slide">
+<img src="photo5.jpg">
+</div>
+
+</div>
+
+<!-- message -->
 <div class="message">
 
-baby mujhe pta h ki tm bs mere ho but fir bhi puchhna to bnta h na ... will u be my valentine forever..  
-mesa ke liye.. or hum kbhi bhi tmko kiss or ye replace nhi krna chahte... I love youuuuuuuuuuu so much ❤️🥺  
-pata h bhot bhot jyogdo hote h lekin kuchh bhi ho jye last me aana to tmhare pass hee h naa  
-pta nhi kaise itna achha gye ho mere dil se... I love you sweetheart 🥺💖  
-
-Tum meri life ka sabse special person ho ❤️  
-Tumhare bina meri duniya adhuri hai...  
-Main promise karti hoon ki chahe kuch bhi ho jaye, main hmesha tumhare sath rahungi.  
-tumhe support karungi, aur tumse hmesha pyar karti rahungi 💕  
-
-You are my forever, my always, my everything ❤️  
-Will you be mine forever? 💍  
+baby mujhe pta h ki tm bs mere ho but fir bhi puchhna to bnta h na ... will u be my valentine forever.. mesa ke liye.. or hum kbhi bhi tmko kiss or ye replace nhi krna chahte... I love youuuuuuuuuuu so much ❤️🥺 pata h bhot bhot jyogdo hote h lekin kuchh bhi ho jye last me aana to tmhare pass hee h naa pta nhi kaise itna achha gye ho mere dil se... I love you sweetheart 🥺💖 Tum meri life ka sabse special person ho ❤️ Tumhare bina meri duniya adhuri hai... Main promise karti hoon ki chahe kuch bhi ho jaye, main hmesha tumhare sath rahungi. tumhe support karungi, aur tumse hmesha pyar karti rahungi 💕 You are my forever, my always, my everything ❤️ Will you be mine forever? 💍
 
 </div>
 
-<div class="song">
 <h3>Our Song 🎵</h3>
 
-<a href="https://open.spotify.com/track/5bHDGWyIFML1LYXZWTD5MF" target="_blank">
-<button class="btn">
-Listen Our Song ❤️
-</button>
-</a>
+<!-- Spotify embedded player -->
+<iframe style="border-radius:12px"
+src="https://open.spotify.com/embed/track/5bHDGWyIFML1LYXZWTD5MF"
+width="300"
+height="80"
+frameborder="0"
+allowfullscreen=""
+allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+</iframe>
 
-</div>
+<br><br>
 
 <button class="btn">
 Yes, I AM YOURS FOREVER ❤️
 </button>
 
-</div>
-
-<!-- hearts script -->
 <script>
 
+/* slideshow */
+let slides=document.querySelectorAll(".slide");
+let index=0;
+
+setInterval(()=>{
+slides[index].classList.remove("active");
+index=(index+1)%slides.length;
+slides[index].classList.add("active");
+},3000);
+
+
+/* hearts */
 function createHeart(){
 
-const heart=document.createElement("div");
+let heart=document.createElement("div");
 
 heart.className="heart";
 
