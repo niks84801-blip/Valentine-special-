@@ -1,198 +1,249 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Valentine ❤️</title>
+<title>My Forever Valentine ❤️</title>
 
 <style>
+
 body{
 margin:0;
 font-family:Arial, sans-serif;
-background:linear-gradient(135deg,#ff4e8a,#ff9ecb);
+background:linear-gradient(135deg,#ff4b7d,#ff9a9e);
 color:white;
 text-align:center;
 overflow-x:hidden;
 }
 
-.container{
-padding:20px;
-}
-
-h1{
-margin-top:10px;
-}
-
+/* slideshow container */
 .slideshow{
+position:relative;
+width:90%;
 max-width:320px;
+height:400px;
 margin:auto;
-border-radius:15px;
 overflow:hidden;
-box-shadow:0 0 15px rgba(0,0,0,0.3);
+border-radius:20px;
+box-shadow:0 0 30px rgba(255,255,255,0.5);
 }
 
+/* slideshow images */
 .slideshow img{
+position:absolute;
 width:100%;
-border-radius:15px;
+height:100%;
+object-fit:cover;
+border-radius:20px;
+opacity:0;
+animation:fadeZoom 15s infinite;
 }
 
+/* animation delay */
+.slideshow img:nth-child(1){animation-delay:0s;}
+.slideshow img:nth-child(2){animation-delay:3s;}
+.slideshow img:nth-child(3){animation-delay:6s;}
+.slideshow img:nth-child(4){animation-delay:9s;}
+.slideshow img:nth-child(5){animation-delay:12s;}
+
+/* fade zoom animation */
+@keyframes fadeZoom{
+0%{opacity:0; transform:scale(1);}
+10%{opacity:1;}
+30%{opacity:1; transform:scale(1.1);}
+40%{opacity:0;}
+100%{opacity:0;}
+}
+
+/* message box */
 .message{
 background:rgba(255,255,255,0.2);
 padding:20px;
+margin:20px;
 border-radius:15px;
-margin-top:20px;
-min-height:180px;
+font-size:17px;
 line-height:1.6;
-font-size:16px;
+box-shadow:0 0 15px rgba(255,255,255,0.3);
 }
 
+/* button */
 button{
-padding:12px 22px;
-font-size:16px;
+padding:15px 25px;
+font-size:18px;
 border:none;
-border-radius:25px;
-background:white;
-color:#ff4e8a;
-font-weight:bold;
+border-radius:30px;
+background:red;
+color:white;
+cursor:pointer;
+box-shadow:0 0 20px rgba(0,0,0,0.3);
+}
+
+/* popup */
+#popup{
+display:none;
+font-size:28px;
 margin-top:20px;
-box-shadow:0 0 10px rgba(0,0,0,0.3);
+color:yellow;
+animation:pop 1s ease;
+}
+
+@keyframes pop{
+0%{transform:scale(0);}
+100%{transform:scale(1);}
 }
 
 /* floating hearts */
 .heart{
 position:fixed;
-bottom:-10px;
+bottom:-20px;
 animation:floatUp 5s linear infinite;
 }
 
 @keyframes floatUp{
-0%{
-transform:translateY(0);
-opacity:1;
+0%{transform:translateY(0); opacity:1;}
+100%{transform:translateY(-100vh); opacity:0;}
 }
-100%{
-transform:translateY(-100vh);
-opacity:0;
-}
-}
-</style>
 
+/* rose petals */
+.petal{
+position:fixed;
+top:-10px;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(0);}
+100%{transform:translateY(100vh);}
+}
+
+</style>
 </head>
 
 <body>
 
-<div class="container">
+<h1>Happy Valentine's Day My Love ❤️</h1>
 
-<h1>❤️ Happy Valentine's Day ❤️</h1>
-
-<!-- Slideshow -->
+<!-- Animated slideshow -->
 <div class="slideshow">
-<img id="slide" src="photo1.jpg">
+
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+<img src="photo4.jpg">
+<img src="photo5.jpg">
+
 </div>
 
 <!-- Message -->
-<div class="message" id="typing"></div>
+<div class="message">
 
-<!-- Play Button -->
-<button onclick="showPlayer()">🎵 Play Our Song 💕</button>
-
-<!-- Spotify Player -->
-<div id="spotifyPlayer" style="display:none;max-width:320px;margin:auto;margin-top:15px;">
-<iframe style="border-radius:12px"
-src="https://open.spotify.com/embed/track/5bHDGWyIFML1LYXZWTD5MF"
-width="100%"
-height="80"
-frameborder="0"
-allow="autoplay; clipboard-write; encrypted-media;">
-</iframe>
-</div>
-
-</div>
-
-<script>
-
-/* Slideshow */
-let images = [
-"photo1.jpg",
-"photo2.jpg",
-"photo3.jpg",
-"photo4.jpg",
-"photo5.jpg"
-];
-
-let slideIndex = 0;
-
-setInterval(function(){
-
-slideIndex++;
-
-if(slideIndex >= images.length){
-slideIndex = 0;
-}
-
-document.getElementById("slide").src = images[slideIndex];
-
-}, 2000);
-
-
-/* Full Typing Message */
-let text = `baby mujhe pta h ki tm bs mere ho but fir bhi puchhna to bnta h na ...
+baby mujhe pta h ki tm bs mere ho but fir bhi puchhna to bnta h na ...
 will u be my valentine forever.. hmesa ke liye...
 or hum kbhi bhi tmko kisi or se replace nhi krna chahte..... I love youuuuuuuu 🌹🫂♥️🧿.....
 pta h hmara bht jhagda hota h lekin kuchh bhi ho jye last me aana to tmhare pss hee h naa
 pta nhi kaise itna chipak gye ho mere dil se.....
-I love you sweetheart 💋😘😘`;
+I love you sweetheart 💋😘😘
 
-let index = 0;
+Tum meri life ka sabse special person ho ❤️  
+Tumhare bina meri duniya adhuri hai...
 
-function typeEffect(){
+Main promise karti hoon ki chahe kuch bhi ho jaye,  
+main hmesha tumhare sath rahungi, tumhe support karungi, aur tumse hmesha pyaar karti rahungi 💕
 
-if(index < text.length){
+You are my forever, my always, my everything ❤️
 
-document.getElementById("typing").innerHTML += text.charAt(index);
+Will you be mine forever? 💍
 
-index++;
+</div>
 
-setTimeout(typeEffect, 40);
+<h2>Our Song 🎵</h2>
+
+<iframe style="border-radius:12px"
+src="https://open.spotify.com/embed/track/5bHDGWyIFML1LYXZWTD5MF"
+width="90%" height="152"
+frameborder="0"
+allow="autoplay; encrypted-media;">
+</iframe>
+
+<br><br>
+
+<button onclick="sayYes()">YES, I AM YOURS FOREVER ❤️</button>
+
+<div id="popup">
+I LOVE YOU FOREVER 💍❤️
+</div>
+
+<script>
+
+/* popup + confetti */
+function sayYes(){
+
+document.getElementById("popup").style.display="block";
+
+for(let i=0;i<40;i++){
+
+let conf=document.createElement("div");
+
+conf.innerHTML="💖";
+
+conf.style.position="fixed";
+conf.style.left=Math.random()*100+"vw";
+conf.style.top="-10px";
+conf.style.fontSize="25px";
+
+document.body.appendChild(conf);
+
+conf.animate([
+{transform:"translateY(0)"},
+{transform:"translateY(100vh)"}
+],{duration:2000});
+
+setTimeout(()=>conf.remove(),2000);
 
 }
 
 }
 
-typeEffect();
+/* floating hearts */
+setInterval(()=>{
 
+let heart=document.createElement("div");
 
-/* Show Spotify Player */
-function showPlayer(){
+heart.className="heart";
 
-document.getElementById("spotifyPlayer").style.display = "block";
+heart.innerHTML="❤️";
 
-}
+heart.style.left=Math.random()*100+"vw";
 
-
-/* Floating Hearts */
-function createHeart(){
-
-let heart = document.createElement("div");
-
-heart.className = "heart";
-
-heart.innerHTML = "❤️";
-
-heart.style.left = Math.random() * 100 + "vw";
-
-heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+heart.style.fontSize=(20+Math.random()*20)+"px";
 
 document.body.appendChild(heart);
 
-setTimeout(function(){
+setTimeout(()=>heart.remove(),5000);
 
-heart.remove();
+},400);
 
-}, 5000);
 
-}
+/* falling petals */
+setInterval(()=>{
 
-setInterval(createHeart, 500);
+let petal=document.createElement("div");
+
+petal.className="petal";
+
+petal.innerHTML="🌹";
+
+petal.style.left=Math.random()*100+"vw";
+
+petal.style.fontSize=(15+Math.random()*15)+"px";
+
+petal.style.animationDuration=(3+Math.random()*5)+"s";
+
+document.body.appendChild(petal);
+
+setTimeout(()=>petal.remove(),8000);
+
+},600);
 
 </script>
 
