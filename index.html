@@ -16,17 +16,11 @@ text-align:center;
 overflow-x:hidden;
 }
 
-/* title glow */
-@keyframes glow{
-0%{text-shadow:0 0 10px white;}
-50%{text-shadow:0 0 25px white;}
-100%{text-shadow:0 0 10px white;}
-}
-
+/* title */
 .title{
 font-size:26px;
 margin-top:20px;
-animation: glow 2s infinite;
+text-shadow:0 0 15px white;
 }
 
 /* slideshow */
@@ -37,7 +31,7 @@ margin:20px auto;
 position:relative;
 border-radius:20px;
 overflow:hidden;
-box-shadow:0 0 20px rgba(255,255,255,0.6);
+box-shadow:0 0 25px rgba(255,255,255,0.7);
 }
 
 .slide{
@@ -70,7 +64,13 @@ margin:20px;
 border-radius:15px;
 }
 
-/* button */
+/* buttons */
+.buttons{
+margin-top:20px;
+position:relative;
+height:120px;
+}
+
 .btn{
 background:red;
 color:white;
@@ -78,13 +78,27 @@ padding:12px 25px;
 border:none;
 border-radius:25px;
 font-size:16px;
-margin-top:15px;
+margin:10px;
+cursor:pointer;
+box-shadow:0 0 15px red;
 }
 
-/* heart animation */
+#noBtn{
+background:black;
+position:absolute;
+left:60%;
+}
+
+/* floating hearts */
 @keyframes fall{
-0%{transform:translateY(-100px);}
-100%{transform:translateY(100vh);}
+0%{
+transform:translateY(-100px);
+opacity:1;
+}
+100%{
+transform:translateY(100vh);
+opacity:0;
+}
 }
 
 .heart{
@@ -131,27 +145,42 @@ Happy Valentine's Day My Love ❤️
 <!-- message -->
 <div class="message">
 
-baby mujhe pta h ki tm bs mere ho but fir bhi puchhna to bnta h na ... will u be my valentine forever.. mesa ke liye.. or hum kbhi bhi tmko kiss or ye replace nhi krna chahte... I love youuuuuuuuuuu so much ❤️🥺 pata h bhot bhot jyogdo hote h lekin kuchh bhi ho jye last me aana to tmhare pass hee h naa pta nhi kaise itna achha gye ho mere dil se... I love you sweetheart 🥺💖 Tum meri life ka sabse special person ho ❤️ Tumhare bina meri duniya adhuri hai... Main promise karti hoon ki chahe kuch bhi ho jaye, main hmesha tumhare sath rahungi. tumhe support karungi, aur tumse hmesha pyar karti rahungi 💕 You are my forever, my always, my everything ❤️ Will you be mine forever? 💍
+baby mujhe pta h ki tm bs mere ho but fir bhi puchhna to bnta h na ...
+will u be my valentine forever.. hmesa ke liye...
+or hum kbhi bhi tmko kisi or se replace nhi krna chahte..... I love youuuuuuuu 🌹🫂♥️🧿.....
+pta h hmara bht jhagda hota h lekin kuchh bhi ho jye last me aana to tmhare pss hee h naa
+pta nhi kaise itna chipak gye ho mere dil se.....
+I love you sweetheart 💋😘😘
+
+You are my forever, my always, my everything ❤️
 
 </div>
 
 <h3>Our Song 🎵</h3>
 
-<!-- Spotify embedded player -->
+<!-- Spotify player -->
 <iframe style="border-radius:12px"
 src="https://open.spotify.com/embed/track/5bHDGWyIFML1LYXZWTD5MF"
 width="300"
 height="80"
 frameborder="0"
-allowfullscreen=""
-allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+allow="autoplay; encrypted-media;">
 </iframe>
 
-<br><br>
+<!-- proposal buttons -->
+<div class="buttons">
 
-<button class="btn">
-Yes, I AM YOURS FOREVER ❤️
+<button class="btn" id="yesBtn" onclick="yesClicked()">
+YES ❤️
 </button>
+
+<button class="btn" id="noBtn"
+onmouseover="moveNoButton()"
+onclick="noClicked()">
+NO 😄
+</button>
+
+</div>
 
 <script>
 
@@ -160,13 +189,81 @@ let slides=document.querySelectorAll(".slide");
 let index=0;
 
 setInterval(()=>{
+
 slides[index].classList.remove("active");
+
 index=(index+1)%slides.length;
+
 slides[index].classList.add("active");
+
 },3000);
 
 
-/* hearts */
+/* YES click */
+function yesClicked(){
+
+alert("YAYYYYY ❤️ I LOVE YOU FOREVER 💍");
+
+createHeartExplosion();
+
+}
+
+
+/* NO click → YES grows */
+let yesSize=16;
+
+function noClicked(){
+
+let yesBtn=document.getElementById("yesBtn");
+
+yesSize+=5;
+
+yesBtn.style.fontSize=yesSize+"px";
+
+yesBtn.style.padding="15px 30px";
+
+}
+
+
+/* NO button runs away */
+function moveNoButton(){
+
+let btn=document.getElementById("noBtn");
+
+btn.style.left=Math.random()*250+"px";
+
+btn.style.top=Math.random()*80+"px";
+
+}
+
+
+/* heart explosion */
+function createHeartExplosion(){
+
+for(let i=0;i<30;i++){
+
+let heart=document.createElement("div");
+
+heart.innerHTML="💖";
+
+heart.style.position="fixed";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.top=Math.random()*100+"vh";
+
+heart.style.fontSize="30px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),2000);
+
+}
+
+}
+
+
+/* falling hearts background */
 function createHeart(){
 
 let heart=document.createElement("div");
@@ -187,7 +284,7 @@ heart.remove();
 
 }
 
-setInterval(createHeart,300);
+setInterval(createHeart,400);
 
 </script>
 
