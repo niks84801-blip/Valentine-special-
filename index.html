@@ -3,117 +3,115 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Forever Valentine ❤️</title>
+<title>My Forever ❤️</title>
 
 <style>
 
 body{
 margin:0;
-font-family:Arial, sans-serif;
-background:linear-gradient(135deg,#ff4b7d,#ff9a9e);
+font-family: 'Segoe UI', cursive;
+background: linear-gradient(135deg,#ff758c,#ff7eb3);
 color:white;
 text-align:center;
 overflow-x:hidden;
 }
 
-/* slideshow container */
+/* container */
+.container{
+padding:20px;
+}
+
+/* heading animation */
+h1{
+animation: glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{text-shadow:0 0 10px white;}
+to{text-shadow:0 0 25px red;}
+}
+
+/* slideshow */
 .slideshow{
-position:relative;
 width:90%;
-max-width:320px;
-height:400px;
+max-width:350px;
 margin:auto;
+position:relative;
+border-radius:20px;
 overflow:hidden;
-border-radius:20px;
-box-shadow:0 0 30px rgba(255,255,255,0.5);
+box-shadow:0 0 25px rgba(255,255,255,0.6);
 }
 
-/* slideshow images */
-.slideshow img{
-position:absolute;
+.slide{
+display:none;
+animation: zoom 4s ease-in-out;
+}
+
+.slide img{
 width:100%;
-height:100%;
-object-fit:cover;
+height:auto;
 border-radius:20px;
-opacity:0;
-animation:fadeZoom 15s infinite;
 }
 
-/* animation delay */
-.slideshow img:nth-child(1){animation-delay:0s;}
-.slideshow img:nth-child(2){animation-delay:3s;}
-.slideshow img:nth-child(3){animation-delay:6s;}
-.slideshow img:nth-child(4){animation-delay:9s;}
-.slideshow img:nth-child(5){animation-delay:12s;}
-
-/* fade zoom animation */
-@keyframes fadeZoom{
-0%{opacity:0; transform:scale(1);}
-10%{opacity:1;}
-30%{opacity:1; transform:scale(1.1);}
-40%{opacity:0;}
-100%{opacity:0;}
+@keyframes zoom{
+0%{transform:scale(0.9);}
+50%{transform:scale(1.05);}
+100%{transform:scale(1);}
 }
 
 /* message box */
 .message{
 background:rgba(255,255,255,0.2);
 padding:20px;
-margin:20px;
-border-radius:15px;
-font-size:17px;
+border-radius:20px;
+margin-top:20px;
+font-size:15px;
 line-height:1.6;
-box-shadow:0 0 15px rgba(255,255,255,0.3);
+animation: fadeIn 3s;
+}
+
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
 }
 
 /* button */
 button{
-padding:15px 25px;
-font-size:18px;
-border:none;
-border-radius:30px;
 background:red;
+border:none;
+padding:15px 25px;
+border-radius:30px;
 color:white;
-cursor:pointer;
-box-shadow:0 0 20px rgba(0,0,0,0.3);
-}
-
-/* popup */
-#popup{
-display:none;
-font-size:28px;
+font-size:18px;
 margin-top:20px;
-color:yellow;
-animation:pop 1s ease;
+cursor:pointer;
+box-shadow:0 0 15px red;
+animation: pulse 2s infinite;
 }
 
-@keyframes pop{
-0%{transform:scale(0);}
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.1);}
 100%{transform:scale(1);}
 }
 
 /* floating hearts */
 .heart{
 position:fixed;
-bottom:-20px;
-animation:floatUp 5s linear infinite;
+bottom:-10px;
+font-size:20px;
+animation: float 6s linear infinite;
 }
 
-@keyframes floatUp{
-0%{transform:translateY(0); opacity:1;}
-100%{transform:translateY(-100vh); opacity:0;}
+@keyframes float{
+0%{
+transform:translateY(0);
+opacity:1;
 }
-
-/* rose petals */
-.petal{
-position:fixed;
-top:-10px;
-animation:fall linear infinite;
+100%{
+transform:translateY(-100vh);
+opacity:0;
 }
-
-@keyframes fall{
-0%{transform:translateY(0);}
-100%{transform:translateY(100vh);}
 }
 
 </style>
@@ -121,129 +119,108 @@ animation:fall linear infinite;
 
 <body>
 
+<div class="container">
+
 <h1>Happy Valentine's Day My Love ❤️</h1>
 
-<!-- Animated slideshow -->
+<!-- slideshow -->
 <div class="slideshow">
 
+<div class="slide">
 <img src="photo1.jpg">
+</div>
+
+<div class="slide">
 <img src="photo2.jpg">
+</div>
+
+<div class="slide">
 <img src="photo3.jpg">
+</div>
+
+<div class="slide">
 <img src="photo4.jpg">
+</div>
+
+<div class="slide">
 <img src="photo5.jpg">
+</div>
 
 </div>
 
-<!-- Message -->
+
+<!-- message -->
 <div class="message">
 
-baby mujhe pta h ki tm bs mere ho but fir bhi puchhna to bnta h na ...
-will u be my valentine forever.. hmesa ke liye...
-or hum kbhi bhi tmko kisi or se replace nhi krna chahte..... I love youuuuuuuu 🌹🫂♥️🧿.....
-pta h hmara bht jhagda hota h lekin kuchh bhi ho jye last me aana to tmhare pss hee h naa
-pta nhi kaise itna chipak gye ho mere dil se.....
-I love you sweetheart 💋😘😘
+baby mujhe pta h ki tm bs mere ho but fir bhi puchhna to bnta h na ... will u be my valentine forever.. hmesa ke liye... or hum kbhi bhi tmko kisi or se replace nhi krna chahte..... I love youuuuuuu 🌹🫂❤️🧿..... pta h hmara bht jhagda hota h lekin kuchh bhi ho jye last me aana to tmhare pss hee h naa pta nhi kaise itna chipak gye ho mere dil se.... I love you sweetheart 💋😘😘  
 
-Tum meri life ka sabse special person ho ❤️  
-Tumhare bina meri duniya adhuri hai...
+Tum meri life ka sabse special person ho ❤️ Tumhare bina meri duniya adhuri hai... Main promise karti hoon ki chahe kuch bhi ho jaye, main hmesha tumhare sath rahungi. Tum meri strength ho, meri smile ho, meri happiness ho 💖  
 
-Main promise karti hoon ki chahe kuch bhi ho jaye,  
-main hmesha tumhare sath rahungi, tumhe support karungi, aur tumse hmesha pyaar karti rahungi 💕
-
-You are my forever, my always, my everything ❤️
-
-Will you be mine forever? 💍
+You are my forever, my always, my everything ❤️  
+Will you be mine forever? 🥺💍  
 
 </div>
+
 
 <h2>Our Song 🎵</h2>
 
 <iframe style="border-radius:12px"
 src="https://open.spotify.com/embed/track/5bHDGWyIFML1LYXZWTD5MF"
-width="90%" height="152"
-frameborder="0"
-allow="autoplay; encrypted-media;">
+width="100%"
+height="80"
+frameBorder="0"
+allowfullscreen
+allow="autoplay; clipboard-write; encrypted-media; fullscreen">
 </iframe>
 
-<br><br>
 
-<button onclick="sayYes()">YES, I AM YOURS FOREVER ❤️</button>
+<button onclick="alert('I LOVE YOU FOREVER ❤️')">
+Yes, I am yours forever ❤️
+</button>
 
-<div id="popup">
-I LOVE YOU FOREVER 💍❤️
 </div>
 
+
+<!-- floating hearts -->
 <script>
 
-/* popup + confetti */
-function sayYes(){
-
-document.getElementById("popup").style.display="block";
-
-for(let i=0;i<40;i++){
-
-let conf=document.createElement("div");
-
-conf.innerHTML="💖";
-
-conf.style.position="fixed";
-conf.style.left=Math.random()*100+"vw";
-conf.style.top="-10px";
-conf.style.fontSize="25px";
-
-document.body.appendChild(conf);
-
-conf.animate([
-{transform:"translateY(0)"},
-{transform:"translateY(100vh)"}
-],{duration:2000});
-
-setTimeout(()=>conf.remove(),2000);
-
-}
-
-}
-
-/* floating hearts */
-setInterval(()=>{
+for(let i=0;i<30;i++){
 
 let heart=document.createElement("div");
-
 heart.className="heart";
-
 heart.innerHTML="❤️";
 
 heart.style.left=Math.random()*100+"vw";
-
-heart.style.fontSize=(20+Math.random()*20)+"px";
+heart.style.animationDuration=(3+Math.random()*5)+"s";
 
 document.body.appendChild(heart);
 
-setTimeout(()=>heart.remove(),5000);
+}
 
-},400);
+/* slideshow script */
 
+let slideIndex=0;
 
-/* falling petals */
-setInterval(()=>{
+function showSlides(){
 
-let petal=document.createElement("div");
+let slides=document.getElementsByClassName("slide");
 
-petal.className="petal";
+for(let i=0;i<slides.length;i++){
+slides[i].style.display="none";
+}
 
-petal.innerHTML="🌹";
+slideIndex++;
 
-petal.style.left=Math.random()*100+"vw";
+if(slideIndex>slides.length){
+slideIndex=1;
+}
 
-petal.style.fontSize=(15+Math.random()*15)+"px";
+slides[slideIndex-1].style.display="block";
 
-petal.style.animationDuration=(3+Math.random()*5)+"s";
+setTimeout(showSlides,3000);
+}
 
-document.body.appendChild(petal);
-
-setTimeout(()=>petal.remove(),8000);
-
-},600);
+showSlides();
 
 </script>
 
